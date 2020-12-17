@@ -4,7 +4,7 @@ on: [push]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GIT_BRANCH: ${{ $(git branch | sed -n -e 's/^\* \(.*\)/\1/p') }}
+  GIT_BRANCH: $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
 jobs:
   connect GCP-download sdk-provision vm:

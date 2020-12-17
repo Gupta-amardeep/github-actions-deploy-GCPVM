@@ -4,7 +4,6 @@ on: [push]
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GIT_BRANCH: $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
   GKE_ZONE: us-east1-d 
 
 jobs:

@@ -5,6 +5,7 @@ on: [push]
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GIT_BRANCH: $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+  GKE_ZONE: us-east1-d 
 
 jobs:
   connect-GCP-download-sdk-provision-vm:
@@ -18,4 +19,4 @@ jobs:
 
     - name: create machine
       run: |
-        gcloud compute instances create $GIT_BRANCH--zone=$GKE_ZONE
+        gcloud compute instances create ${GITHUB_REF##*/} --zone=$GKE_ZONE

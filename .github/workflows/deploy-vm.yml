@@ -7,7 +7,7 @@ env:
   GIT_BRANCH: $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
 jobs:
-  connect GCP-download sdk-provision vm:
+  connect-GCP-download-sdk-provision-vm:
     runs-on: ubuntu-latest
     steps:
     - name: download-google-sdk
